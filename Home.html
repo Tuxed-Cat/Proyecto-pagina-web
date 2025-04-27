@@ -9,12 +9,14 @@
 <body>
 
 <div class="sidebar" id="sidebar">
+    
+    
     <div class="logo" onclick="location.href='home.html'">
         <img src="Compelo_Logo.png" alt="Home">
         <span class="text">Inicio</span>
       </div>
-    
-      <div class="nav-item" onclick="openModal('email-modal')">
+
+      <div class="nav-item" onclick="openModal()">
         <img src="NotifyIcon.png" alt="Notificaciones">
         <span class="text">Notificaciones</span>
       </div>
@@ -37,7 +39,23 @@
   <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
 </div>
 
+
+
 <script src="script.js"></script>
 
 </body>
+
+
+<!-- Ventana emergente notificaciones -->
+<div class="modal" id="notificationModal">
+
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Notificaciones</h2>
+      <p>Aquí verás tus notificaciones más recientes.</p>
+    </div>
+    
+</div>
+
 </html>
+

@@ -3,15 +3,37 @@ function toggleSidebar() {
   sidebar.classList.toggle('expanded');
 }
 
-// Para cerrar la sidebar si clickeas afuera
+// Cerrar sidebar si se clickea afuera (solo en móviles)
 document.addEventListener('click', function(event) {
   const sidebar = document.getElementById('sidebar');
   const toggleBtn = document.querySelector('.toggle-btn');
 
-  // Si la sidebar está expandida y el click NO es dentro de la sidebar ni en el botón
-  if (sidebar.classList.contains('expanded') && 
-      !sidebar.contains(event.target) && 
-      event.target !== toggleBtn) {
-    sidebar.classList.remove('expanded');
+  // Funciona solo si la pantalla es pequeña (por ejemplo, < 768px)
+  if (window.innerWidth <= 768) {
+    if (sidebar.classList.contains('expanded') && 
+        !sidebar.contains(event.target) && 
+        event.target !== toggleBtn) {
+      sidebar.classList.remove('expanded');
+    }
   }
 });
+
+//ventana emergente{
+function openModal() {
+  const modal = document.getElementById('notificationModal');
+  modal.style.display = 'flex'; // Flex para centrar contenido
+}
+
+function closeModal() {
+  const modal = document.getElementById('notificationModal');
+  modal.style.display = 'none';
+}
+
+// Opcional: cerrar modal clickeando fuera del contenido
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById('notificationModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+//}
