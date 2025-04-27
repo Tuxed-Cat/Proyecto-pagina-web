@@ -21,7 +21,7 @@ document.addEventListener('click', function(event) {
 //ventana emergente{
 function openModal() {
   const modal = document.getElementById('notificationModal');
-  modal.style.display = 'flex'; // Flex para centrar contenido
+  modal.style.display = 'flex';
 }
 
 function closeModal() {
