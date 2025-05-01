@@ -132,3 +132,46 @@ body {
     opacity: 1;
   }
 }
+
+/* Estilo para la pagina principal ajeno a la barra lateral*/
+
+.main-content {
+  margin-left: 80px; /* mismo ancho que .sidebar */
+  padding: 20px;
+}
+
+.titulo {
+  font-size: 64px;
+  color: white;
+  background-color: #cc3c1e;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  font-family: Georgia, serif;
+}
+
+.botones {
+  background-color: #cc3c1e;
+  text-align: center;
+  padding: 20px;
+}
+
+.crear {
+  background-color: #57c7f4;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.unirse {
+  background-color: #3342ac;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
