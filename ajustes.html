@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajustes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+  <div class="logo" onclick="location.href='home.html'">
+    <img src="Compelo_Logo.png" alt="Home">
+    <span class="text">Inicio</span>
+  </div>
+
+  <div class="nav-item" onclick="openModal()">
+    <img src="NotifyIcon.png" alt="Notificaciones">
+    <span class="text">Notificaciones</span>
+  </div>
+
+  <div class="nav-item" onclick="location.href='comunidad.html'">
+    <img src="Ceti.webp" alt="Comunidad">
+    <span class="text">Comunidades</span>
+  </div>
+
+  <div class="nav-item" onclick="location.href='perfil.html'">
+    <img src="UserDefaultIcon.jpg" alt="Perfil" class="perfil-icon">
+    <span class="text">Perfil</span>
+  </div>
+
+  <div class="nav-item" onclick="location.href='ajustes.html'">
+    <img src="SettingsIcon.png" alt="Ajustes">
+    <span class="text">Ajustes</span>
+  </div>
+
+  <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+</div>
+
+<div class="main-content">
+  <h1 class="titulo">Ajustes</h1>
+  <div class="botones">
+    <button class="crear">Cambiar contraseña</button>
+    <button class="unirse">Cerrar sesión</button>
+    <br><br>
+    <button class="crear" style="background-color:#999;">Modo oscuro: Activado</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<div class="modal" id="notificationModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Notificaciones</h2>
+    <p>Aquí verás tus notificaciones más recientes.</p>
+  </div>
+</div>
+
+</body>
+</html>

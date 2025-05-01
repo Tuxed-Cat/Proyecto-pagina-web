@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidad</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilo para la barra lateral interna */
+    .comunidad-sidebar {
+      position: fixed;
+      top: 0;
+      left: 80px; /* Justo al lado de la sidebar principal */
+      width: 180px;
+      height: 100vh;
+      background-color: #36393f;
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    .comunidad-btn {
+      background-color: transparent;
+      color: white;
+      font-size: 16px;
+      border: none;
+      text-align: left;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .comunidad-btn:hover {
+      background-color: #7289da;
+    }
+
+    /* Ajuste al contenido principal con la doble barra */
+    .main-content {
+      margin-left: 260px; /* 80px + 180px */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar principal -->
+<div class="sidebar" id="sidebar">
+  <div class="logo" onclick="location.href='home.html'">
+    <img src="Compelo_Logo.png" alt="Home">
+    <span class="text">Inicio</span>
+  </div>
+
+  <div class="nav-item" onclick="openModal()">
+    <img src="NotifyIcon.png" alt="Notificaciones">
+    <span class="text">Notificaciones</span>
+  </div>
+
+  <div class="nav-item" onclick="location.href='comunidad.html'">
+    <img src="Ceti.webp" alt="Comunidad">
+    <span class="text">Comunidades</span>
+  </div>
+
+  <div class="nav-item" onclick="location.href='perfil.html'">
+    <img src="UserDefaultIcon.jpg" alt="Perfil" class="perfil-icon">
+    <span class="text">Perfil</span>
+  </div>
+
+  <div class="nav-item" onclick="location.href='ajustes.html'">
+    <img src="SettingsIcon.png" alt="Ajustes">
+    <span class="text">Ajustes</span>
+  </div>
+
+  <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+</div>
+
+<!-- Sidebar interna de comunidad -->
+<div class="comunidad-sidebar">
+  <button class="comunidad-btn">Historial de partidas</button>
+  <button class="comunidad-btn"> Puntos y Rango</button>
+  <button class="comunidad-btn"> Miembros</button>
+  <button class="comunidad-btn"> Subir partida</button>
+</div>
+
+
+<!-- Modal de notificaciones -->
+<div class="modal" id="notificationModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Notificaciones</h2>
+    <p>Aquí verás tus notificaciones más recientes.</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
