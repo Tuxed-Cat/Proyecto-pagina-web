@@ -18,6 +18,7 @@ body {
   transition: width 0.4s ease, background-color 0.3s ease;
   overflow: hidden;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 .sidebar.expanded {
@@ -36,6 +37,7 @@ body {
   padding: 8px;
   transition: background 0.3s ease, transform 0.3s ease;
   border-radius: 10px;
+  position: relative;
 }
 
 .logo img, .nav-item img {
@@ -52,6 +54,11 @@ body {
 
 .logo:hover, .nav-item:hover {
   background: #40444b;
+}
+
+/* Estilo para el icono activo */
+.nav-item.active img {
+  background: #fff !important;
 }
 
 .text {
@@ -83,6 +90,62 @@ body {
 
 .toggle-btn:hover {
   transform: rotate(90deg);
+}
+
+/* Estilos para el submenu de comunidades */
+.community-submenu {
+  display: none;
+  position: absolute;
+  left: 80px;
+  top: 0;
+  background: #2c2f33;
+  width: 220px;
+  z-index: 5;
+  transition: all 0.3s ease;
+  padding-top: 10px;
+}
+
+.sidebar.expanded .community-submenu {
+  left: 220px;
+}
+
+.community-submenu.active {
+  display: block;
+}
+
+.submenu-header {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submenu-item:hover {
+  background: #40444b;
+}
+
+.submenu-item.active {
+  background: #40444b;
+}
+
+.marker {
+  color: #cc3c1e;
+  margin-right: 10px;
+  visibility: hidden;
+}
+
+.submenu-item.active .marker {
+  visibility: visible;
 }
 
 /* Modal (ventana emergente) */

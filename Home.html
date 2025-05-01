@@ -13,29 +13,51 @@
     <div class="logo" onclick="location.href='home.html'">
         <img src="Compelo_Logo.png" alt="Home">
         <span class="text">Inicio</span>
-      </div>
+    </div>
 
-      <div class="nav-item" onclick="openModal()">
+    <div class="nav-item" onclick="openModal()">
         <img src="NotifyIcon.png" alt="Notificaciones">
         <span class="text">Notificaciones</span>
-      </div>
+    </div>
     
-      <div class="nav-item" onclick="location.href='comunidad.html'">
-        <img src="Ceti.webp" alt="Comunidad">
+    <div class="nav-item community-item" id="community-btn">
+        <img src="Ceti.webp" alt="Comunidad" id="community-icon">
         <span class="text">Comunidades</span>
-      </div>
+    </div>
     
-      <div class="nav-item" onclick="location.href='perfil.html'">
+    <div class="community-submenu" id="community-submenu">
+        <div class="submenu-header">
+            Black diamonds community
+        </div>
+        <div class="submenu-item" data-page="historial.html">
+            <span class="marker">▼</span>
+            <span>Historial de partidas</span>
+        </div>
+        <div class="submenu-item" data-page="puntos.html">
+            <span class="marker">▼</span>
+            <span>Puntos y Rango</span>
+        </div>
+        <div class="submenu-item" data-page="miembros.html">
+            <span class="marker">▼</span>
+            <span>Miembros</span>
+        </div>
+        <div class="submenu-item" data-page="subir.html">
+            <span class="marker">▼</span>
+            <span>Subir Partida</span>
+        </div>
+    </div>
+    
+    <div class="nav-item" onclick="location.href='perfil.html'">
         <img src="UserDefaultIcon.jpg" alt="Perfil" class="perfil-icon">
         <span class="text">Perfil</span>
-      </div>
+    </div>
     
-      <div class="nav-item" onclick="location.href='ajustes.html'">
+    <div class="nav-item" onclick="location.href='ajustes.html'">
         <img src="SettingsIcon.png" alt="Ajustes">
         <span class="text">Ajustes</span>
-      </div>
+    </div>
 
-  <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+    <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
 </div>
 
 <div class="main-content">
@@ -52,13 +74,11 @@
 
 <!-- Ventana emergente notificaciones -->
 <div class="modal" id="notificationModal">
-
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <h2>Notificaciones</h2>
       <p>Aquí verás tus notificaciones más recientes.</p>
     </div>
-
 </div>
 
 </html>
