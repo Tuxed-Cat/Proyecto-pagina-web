@@ -12,16 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const communityItem = document.getElementById('community-btn');
     communityItem.classList.add('active');
     
-    // Mostrar el submenu
+    // Mostrar el submenu solo en las páginas internas, no en la principal de comunidad
     const communitySubmenu = document.getElementById('community-submenu');
-    communitySubmenu.classList.add('active');
-    
-    // Expandir la barra lateral
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.add('expanded');
-    
-    // Activar el ítem de submenu correspondiente
     if (currentPage !== 'comunidad.html') {
+      communitySubmenu.classList.add('active');
+      
+      // Expandir la barra lateral
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.add('expanded');
+      
+      // Activar el ítem de submenu correspondiente
       const submenuItems = document.querySelectorAll('.submenu-item');
       submenuItems.forEach(item => {
         if (item.dataset.page === currentPage) {
@@ -51,14 +51,31 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  
+  // Configurar el botón de toggle
+  const toggleBtn = document.querySelector('.toggle-btn');
+  toggleBtn.addEventListener('click', toggleSidebar);
 });
 
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
-  sidebar.classList.toggle('expanded');
+  const communitySubmenu = document.getElementById('community-submenu');
+  const communityItem = document.getElementById('community-btn');
+  
+  // Si la barra está expandida, cerrarla y ocultar el submenu
+  if (sidebar.classList.contains('expanded')) {
+    sidebar.classList.remove('expanded');
+    communitySubmenu.classList.remove('active');
+    communityItem.classList.remove('active');
+  } else {
+    // Si la barra está cerrada, expandirla pero no mostrar el submenu
+    sidebar.classList.add('expanded');
+  }
 }
 
-function toggleCommunityMenu() {
+function toggleCommunityMenu(event) {
+  event.stopPropagation(); // Prevenir que el click se propague
+  
   const communityItem = document.getElementById('community-btn');
   const communitySubmenu = document.getElementById('community-submenu');
   const sidebar = document.getElementById('sidebar');
@@ -69,8 +86,13 @@ function toggleCommunityMenu() {
   }
   
   // Activar/desactivar el menu de comunidad
-  communityItem.classList.toggle('active');
-  communitySubmenu.classList.toggle('active');
+  if (communitySubmenu.classList.contains('active')) {
+    communitySubmenu.classList.remove('active');
+    communityItem.classList.remove('active');
+  } else {
+    communitySubmenu.classList.add('active');
+    communityItem.classList.add('active');
+  }
 }
 
 // Cerrar sidebar si se clickea afuera (solo en móviles)
