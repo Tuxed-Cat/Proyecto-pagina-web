@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceti Community</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+    
+    <div class="logo" onclick="location.href='home.html'">
+        <img src="Compelo_Logo.png" alt="Home">
+        <span class="text">Inicio</span>
+    </div>
+
+    <div class="nav-item" onclick="openModal()">
+        <img src="NotifyIcon.png" alt="Notificaciones">
+        <span class="text">Notificaciones</span>
+    </div>
+    
+    <div class="nav-item community-item" id="community-btn">
+        <img src="Ceti.webp" alt="Comunidad" id="community-icon">
+        <span class="text">Comunidades</span>
+    </div>
+    
+    <div class="community-submenu" id="community-submenu">
+        <div class="submenu-header">
+            Black diamonds community
+        </div>
+        <div class="submenu-item" data-page="historial.html">
+            <span class="marker">▼</span>
+            <span>Historial de partidas</span>
+        </div>
+        <div class="submenu-item" data-page="puntos.html">
+            <span class="marker">▼</span>
+            <span>Puntos y Rango</span>
+        </div>
+        <div class="submenu-item" data-page="miembros.html">
+            <span class="marker">▼</span>
+            <span>Miembros</span>
+        </div>
+        <div class="submenu-item" data-page="subir.html">
+            <span class="marker">▼</span>
+            <span>Subir Partida</span>
+        </div>
+    </div>
+    
+    <div class="nav-item" onclick="location.href='perfil.html'">
+        <img src="UserDefaultIcon.jpg" alt="Perfil" class="perfil-icon">
+        <span class="text">Perfil</span>
+    </div>
+    
+    <div class="nav-item" onclick="location.href='ajustes.html'">
+        <img src="SettingsIcon.png" alt="Ajustes">
+        <span class="text">Ajustes</span>
+    </div>
+
+    <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+</div>
+
+<div class="community-content">
+  <div class="community-header">
+    <img src="Ceti.webp" alt="Black Diamonds Logo" class="community-logo">
+    <h1 class="community-title">Ceti Community</h1>
+    <p class="community-description">Comunidad dedicada a los jugadores competitivos de Smash Bros.</p>
+  </div>
+  
+  <div class="community-info">
+    <div class="info-section">
+      <h2>Bienvenido</h2>
+      <p>Somos una comunidad activa de jugadores de Smash Bros. Aquí podrás encontrar torneos, eventos y jugadores de todos los niveles para mejorar tus habilidades.</p>
+    </div>
+    
+    <div class="info-section">
+      <h2>Próximos Eventos</h2>
+      <ul class="events-list">
+        <li><strong>Torneo semanal</strong> - Viernes 20:00h</li>
+        <li><strong>Sesión de práctica</strong> - Martes 18:00h</li>
+        <li><strong>Torneo regional</strong> - 15 de Mayo</li>
+      </ul>
+    </div>
+    
+    <div class="info-section">
+      <h2>Anuncios</h2>
+      <p><strong>¡Nuevo sistema de ranking!</strong> Hemos actualizado nuestro sistema de puntuación para los torneos. Consulta la sección de Puntos y Rango para más información.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Ventana emergente notificaciones -->
+<div class="modal" id="notificationModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Notificaciones</h2>
+      <p>Aquí verás tus notificaciones más recientes.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
