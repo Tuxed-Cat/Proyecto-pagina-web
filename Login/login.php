@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +13,18 @@
   <div class="login-box">
     <h2>¡bienvenido devuelta a <span>compelo</span>!</h2>
     
-    <form action="login.php" method="POST">
+    <?php
+    if (isset($_SESSION['error'])) {
+        echo '<div style="color: red; margin-bottom: 10px; text-align: center; font-size: 0.9em;">' . $_SESSION['error'] . '</div>';
+        unset($_SESSION['error']);
+    }
+    if (isset($_SESSION['success'])) {
+        echo '<div style="color: green; margin-bottom: 10px; text-align: center; font-size: 0.9em;">' . $_SESSION['success'] . '</div>';
+        unset($_SESSION['success']);
+    }
+    ?>
+    
+    <form action="procesar_login.php" method="POST">
       <label for="usuario">usuario</label>
       <input type="text" id="usuario" name="usuario" required />
       

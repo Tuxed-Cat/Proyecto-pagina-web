@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +13,14 @@
   <div class="register-box">
     <h2>¡registro a <span>compelo</span>!</h2>
     
-    <form action="registro.php" method="POST">
+    <?php
+    if (isset($_SESSION['error'])) {
+        echo '<div style="color: red; margin-bottom: 10px; text-align: center; font-size: 0.9em;">' . $_SESSION['error'] . '</div>';
+        unset($_SESSION['error']);
+    }
+    ?>
+    
+    <form action="procesar_registro.php" method="POST">
       <label for="usuario">usuario</label>
       <input type="text" id="usuario" name="usuario" required />
 
